@@ -13,7 +13,6 @@ License:	GPL
 Group:		Development/Perl
 BuildRequires:	perl(Kwiki)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This plugin provides more comprehensive support for images in Kwiki.
