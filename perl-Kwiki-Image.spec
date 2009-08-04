@@ -1,25 +1,25 @@
-%define module	Kwiki-Image
-%define name	perl-%{module}
-%define version 0.01
-%define release %mkrel 5
+%define upstream_name	 Kwiki-Image
+%define upstream_version 0.01
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Kwiki Image Plugin
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Kwiki/%{module}-%{version}.tar.bz2
-URL:		http://search.cpan.org/dist/%{module}/
 License:	GPL
 Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Kwiki/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(Kwiki)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This plugin provides more comprehensive support for images in Kwiki.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -37,4 +37,3 @@ This plugin provides more comprehensive support for images in Kwiki.
 %defattr(-,root,root)
 %doc Changes README
 %{perl_vendorlib}/Kwiki
-
