@@ -1,15 +1,13 @@
 %define upstream_name	 Kwiki-Image
-%define upstream_version 0.01
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.01
+Release:	6
 
 Summary:	Kwiki Image Plugin
 License:	GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Kwiki-Image
-Source0:	https://cpan.metacpan.org/authors/id/D/DM/DMABE/Kwiki-Image-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DM/DMABE/Kwiki-Image-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -20,7 +18,7 @@ BuildArch:	noarch
 This plugin provides more comprehensive support for images in Kwiki.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -38,9 +36,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Tue Aug 04 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 409302
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-5mdv2009.0
+- rebuild using %0.01 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-5mdv2009.0
 + Revision: 257450
 - rebuild
 
